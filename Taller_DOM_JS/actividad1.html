@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mi primera Clase de DOM</title>
+        <style>
+        h1, p{
+            color: rgb(161, 26, 44);
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        button{
+            background: linear-gradient(15deg , rgb(216, 100, 33), rgb(185, 13, 13), rgb(223, 169, 23));
+            color: antiquewhite;
+            font-family: 'Courier New', Courier, monospace;
+            
+        }
+        input{
+            background-color: #F3E05D;
+            color: rgb(161, 26, 44);
+            border-color: rgb(161, 26, 44);
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+        .container{
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Bienvenido a mi primera clase de DOM</h1>
+        <div class="container">
+        </div>
+        <script>
+        //Accediendo al DOM con JS
+        var container = document.querySelector('.container');
+        var titulo = document.querySelector('h1');
+        titulo.innerText = '¡Hola, DOM!';
+        //Crear y manipular elementos dentro del DOM
+        var parrafo = document.createElement('p');
+        parrafo.innerText = 'Aprendiendo el uso del DOM :D';
+        container.appendChild(parrafo);
+        //Moficando estilos
+        document.body.style.backgroundColor = '#F3E05D';
+        //Evento y respuesta por parte del usuario
+        var boton = document.createElement('button');
+        boton.innerText = 'Actualizar Parrafo';
+        container.appendChild(boton);
+        var areaTexto = document.createElement('input');
+        container.appendChild(areaTexto);
+        boton.addEventListener('click', function(){
+            parrafo.innerText = 'Usuario dice: ' + areaTexto.value;
+        });
+    </script>
+    </body>
+</html>
